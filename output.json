@@ -1,0 +1,54 @@
+[
+  {
+    "file": "SakilaProjectApplication.java",
+    "insights": [
+      {
+        "fileName": "SakilaProjectApplication.java",
+        "summary": "This file is the entry point for the SakilaProject application. It includes the main method which executes the SpringApplication's run method.",
+        "methods": [
+          {
+            "name": "main",
+            "signature": "public static void main(String[] args)",
+            "definition": "This method is the entry point for a Java application. It calls the 'run' method of the SpringApplication class, passing SakilaProjectApplication.class and the command line arguments 'args' as parameters."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "ActorController.java",
+    "insights": [
+      {
+        "fileName": "ActorController.java",
+        "summary": "This class provides the controllers for actor objects in a Spring MVC application. It provides methods for getting a list of actors, getting the details of a specific actor and finding an actor by his ID.",
+        "methods": [
+          {
+            "name": "ActorController",
+            "signature": "public ActorController(FilmService filmService, ActorService actorService)",
+            "definition": "This is the constructor of the ActorController class. It auto-wires the FilmService and ActorService."
+          },
+          {
+            "name": "getActors",
+            "signature": "public String getActors(ModelMap modelMap, @RequestParam(value = 'firstName', defaultValue = 'ALL ACTORS') String firstNameFilter, @RequestParam(value = 'lastName', defaultValue = 'ALL ACTORS') String lastNameFilter)",
+            "definition": "This method retrieves a list of actors based on provided filters for first name and last name."
+          },
+          {
+            "name": "getActorFilmDetails",
+            "signature": "public String getActorFilmDetails(ModelMap modelMap, @RequestParam(value = 'id') Integer id)",
+            "definition": "This method fetches the full name of an actor and films associated with the actor based on the provided actor ID."
+          },
+          {
+            "name": "findActorById",
+            "signature": "public Actor findActorById(Integer id)",
+            "definition": "This method returns an Actor object by looking it up with the provided actor ID."
+          },
+          {
+            "name": "getActorFullNameFromID",
+            "signature": "public String getActorFullNameFromID(Integer id)",
+            "definition": "This method retrieves the full name of an actor by looking it up with the provided actor ID."
+          }
+        ]
+      }
+    ]
+  }
+]

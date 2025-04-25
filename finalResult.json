@@ -1,0 +1,55 @@
+{
+  "projectSummary": "The project appears to be a Spring MVC-based web application for managing a movie rental service. This codebase features several distinct functionalities such as managing actors, categories, customers, films, inventories, rentals, and staff. \n\nEntities like actors, categories, customers, films, inventory, rentals, and staff have respective controller classes, which handle HTTP requests corresponding to their operations. These operations are supported by service classes that implement the business logic by interacting with the appropriate 'Repository' interfaces, which extend JpaRepository and provide methods for querying and manipulating data in the related database tables.\n\nEntity classes like Actor, Category, Customer, Film, and Staff map to corresponding tables in a SQL database, with fields matching the columns of the tables. There are also classes like FilmActor, FilmCategory, and Order that represent relationships between these entities.\n\nThe application also incorporates security features such as custom success and failure handlers for authentication, and a user details service for loading user details by username. The application uses path-to-view mappings for '/home', '/', and '/login', and includes a custom login page.\n\nOverall, the application seems to function as a comprehensive system for managing a movie rental service, including managing films, customers, rentals, and staff information, all while maintaining necessary security features.",
+  "keyMethods": [
+    {
+      "name": "main",
+      "signature": "public static void main(String[] args)",
+      "definition": "SpringApplication.run(SakilaProjectApplication.class, args)"
+    },
+    {
+      "name": "getActors",
+      "signature": "public List<Actor> getActors(String firstName, String lastName)",
+      "definition": "Endpoint that retrieves a list of actors depending on the first name and last name filter"
+    },
+    {
+      "name": "login",
+      "signature": "public String login()",
+      "definition": "This method handles HTTP requests sent to the '/login' URL path. It returns the string 'login', which could be the name of a view"
+    },
+    {
+      "name": "getFilmDetails",
+      "signature": "public String getFilmDetails(int id, ModelMap modelMap)",
+      "definition": "Gets film details by id and checks if it is available, then adds these details to modelMap"
+    },
+    {
+      "name": "rentFilm",
+      "signature": "public String rentFilm(int filmId)",
+      "definition": "Enables a film to be rented by a customer and manages inventory accordingly"
+    },
+    {
+      "name": "addViewControllers",
+      "signature": "public void addViewControllers(ViewControllerRegistry registry)",
+      "definition": "Method for setting views path"
+    },
+    {
+      "name": "loadUserByUsername",
+      "signature": "public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException",
+      "definition": "Hibernate method for UserDetailsService interface, loading users by their username"
+    },
+    {
+      "name": "getStaffByUsername",
+      "signature": "public Staff getStaffByUsername(String username)",
+      "definition": "Method that gets a staff member by username"
+    },
+    {
+      "name": "getAllActors",
+      "signature": "public List<Actor> getAllActors()",
+      "definition": "Method that retrieves all actors"
+    },
+    {
+      "name": "getAllCategories",
+      "signature": "public List<Category> getAllCategories()",
+      "definition": "Method that retrieves all categories"
+    }
+  ]
+}
